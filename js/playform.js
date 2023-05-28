@@ -1,7 +1,11 @@
 
-
 //lendo o botão do HTML
 var botao = document.querySelector("#botao");
+
+function exlui(btn) {
+    var ex = $(btn).closest('tr').remove()
+}
+  
 
 //Lendo o evento de clique no botão e chamando uma função quando clicado
 botao.addEventListener('click', function(event){
@@ -53,6 +57,7 @@ botao.addEventListener('click', function(event){
         elementoTr.appendChild(criaTd(dados.num1,"primeiro"));
         elementoTr.appendChild(criaTd(dados.num2,"segundo"));
         elementoTr.appendChild(criaTd(dados.soma,"resultado"));
+        $('<button type="submit" class="btn btn-default" class="botao_ex" onclick="exlui(this)">Excluir</button>').appendTo(elementoTr)
 
         return elementoTr;
        
@@ -80,11 +85,6 @@ botao.addEventListener('click', function(event){
         if (dados.num2.length == 0) {
             erros.push("Insira o segundo numero");
             num2Vazio = true;
-        }
-    
-        if (!num1Vazio && !num2Vazio) {
-            if(!validaNum1(dados.num1)) erros.push("Numero 1 esta invalido");
-            if(!validaNum2(dados.num2)) erros.push("Numero 2 esta invalido");
         }
 
         var dadosComparativo = document.querySelectorAll('.numero');

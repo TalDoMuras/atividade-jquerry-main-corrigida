@@ -71,11 +71,3 @@ function validaNum2 (num2) {
         return false;
     }
 }
-
-
-
-
-
-
-
-
