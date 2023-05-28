@@ -5,7 +5,6 @@ var botao = document.querySelector("#botao");
 function exlui(btn) {
     var ex = $(btn).closest('tr').remove()
 }
-  
 
 //Lendo o evento de clique no botão e chamando uma função quando clicado
 botao.addEventListener('click', function(event){
